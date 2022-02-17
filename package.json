@@ -1,0 +1,16 @@
+{
+  "name": "react-starter-cli",
+  "version": "1.0.0",
+  "description": "A CLI toll to setup the starter files for react projects.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "bin": {
+    "react-setup": "./index.js"
+  },
+  "author": "Soransh Singh",
+  "license": "ISC"
+}
