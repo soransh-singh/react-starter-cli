@@ -5,24 +5,22 @@ import {
   writeFile } from 'fs/promises'
 
 import { resetCss } from './reset-css.js'
+import { resetApp } from './reset-app.js'
 
+const delFiles = ["App.css", "App.test.js", "index.css", "logo.svg",  "setupTests.js"]
 
-// await unlink("./src/App.css")
-// console.log("Deleted:: ./src/App.css")
-//
-// await unlink("./src/App.test.js")
-// console.log("Deleted:: ./src/App.test.js")
-//
-// await unlink("./src/index.css")
-// console.log("Deleted:: ./src/index.css")
-//
-// await unlink("./src/logo.svg")
-// console.log("Deleted:: ./src/logo.svg")
-//
-// await unlink("./src/reportWebVitals.js")
-// console.log("Deleted:: ./src/reportWebVitals.js")
-//
-// await unlink("./src/setupTests.js")
-// console.log("Deleted:: ./src/setupTests.js")
+for(let i in delFiles){
+  try {
+    await unlink(`./src/${delFiles[i]}`)
+    console.log(`Deleted:: ./src/${delFiles[i]}`)
 
-await writeFile(new URL('./src/style.css', import.meta.url), resetCss)
+  } catch (e) {
+    console.log(`${delFiles[i]} is not available`);
+  }
+}
+
+await writeFile("./src/master.css", resetCss)
+console.log("Added:: master.css");
+
+await writeFile("./src/App.js", resetApp)
+console.log("Reset:: App.js");
