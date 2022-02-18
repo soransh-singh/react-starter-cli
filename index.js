@@ -13,14 +13,13 @@ for(let i in delFiles){
   try {
     await unlink(`./src/${delFiles[i]}`)
     console.log(`Deleted:: ./src/${delFiles[i]}`)
-
   } catch (e) {
-    console.log(`${delFiles[i]} is not available`);
+    console.log(`Not Available:: ${delFiles[i]}`);
   }
 }
 
-await writeFile("./src/master.css", resetCss)
-console.log("Added:: master.css");
+await writeFile("./src/index.css", resetCss)
+console.log("Added:: index.css");
 
 await writeFile("./src/App.js", resetApp)
 console.log("Reset:: App.js");

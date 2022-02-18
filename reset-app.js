@@ -4,7 +4,7 @@ import './master.css';
 function App(){
   return(
     <>
-      <h1>THis is an App Component</h1>
+      <h1>App Component</h1>
     </>
   )
 }
